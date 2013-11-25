@@ -14,7 +14,11 @@ class Quickbooks::Parser::QbxmlBase
   STR_CAST   = Proc.new {|d| d ? String(d) : ''}                                  
 
   QB_TYPE_CONVERSION_MAP= {
-    "AMTTYPE"          => FLOAT_CAST,
+    # Got into troubles with QuickBooks, it expects amounts in format 0.00
+    # when this CAST makes 0.0 , so I fallback to strings
+    #"AMTTYPE"          => FLOAT_CAST,
+    "AMTTYPE"          => STR_CAST,
+
     "BOOLTYPE"         => BOOL_CAST,
     "DATETIMETYPE"     => TIME_CAST,
     "DATETYPE"         => DATE_CAST,
