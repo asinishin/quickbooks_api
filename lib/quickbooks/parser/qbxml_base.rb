@@ -19,7 +19,8 @@ class Quickbooks::Parser::QbxmlBase
     #"AMTTYPE"          => FLOAT_CAST,
     "AMTTYPE"          => STR_CAST,
 
-    "BOOLTYPE"         => BOOL_CAST,
+    #"BOOLTYPE"         => BOOL_CAST,
+    "BOOLTYPE"         => STR_CAST,
     "DATETIMETYPE"     => TIME_CAST,
     "DATETYPE"         => DATE_CAST,
     "ENUMTYPE"         => STR_CAST,
