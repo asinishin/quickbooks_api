@@ -30,7 +30,8 @@ class Quickbooks::Parser::QbxmlBase
     "INTTYPE"          => INT_CAST,
     "PERCENTTYPE"      => FLOAT_CAST,
     "PRICETYPE"        => FLOAT_CAST,
-    "QUANTYPE"         => INT_CAST,
+    #"QUANTYPE"         => INT_CAST,
+    "QUANTYPE"         => STR_CAST,
     "STRTYPE"          => STR_CAST,
     "TIMEINTERVALTYPE" => STR_CAST
   }
